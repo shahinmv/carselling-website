@@ -76,8 +76,11 @@ WSGI_APPLICATION = 'carselling.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carwebsite',
+        'USER': 'postgres',
+        'PASSWORD': 'emogirl2001',
+        'HOST': 'localhost',
     }
 }
 
@@ -123,3 +126,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'carselling/static'),
 ]
+
+# Media settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'carselling/media')
+MEDIA_URL = '/media/'
