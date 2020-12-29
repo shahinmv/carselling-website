@@ -9,7 +9,7 @@ class TeamAdmin(admin.ModelAdmin):
     
     thumbnail.short_description = 'Profile Photo'
 
-    list_display = ('id','thumbnail', 'first_name', 'designation', 'created_date')
+    list_display = ('id','thumbnail', 'first_name', 'designation', 'created_date',)
     list_display_links = ('id', 'thumbnail', 'first_name',)
 
 
