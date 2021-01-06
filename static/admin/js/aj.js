@@ -15,6 +15,7 @@ $.ajax({
     success: function(response){
         console.log(response)
         const carsData = response.data
+
         carsData.map(item=>{
             const option = document.createElement('option')
             option.textContent = item.car_title

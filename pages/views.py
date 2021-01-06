@@ -40,10 +40,10 @@ def contact(request):
     return render(request, 'pages/contact.html')
 
 def get_json_car_Data(request):
-    qs_val = list(Car.objects.values())
+    qs_val = list(Car.objects.values('car_title').distinct())
     return JsonResponse({'data':qs_val})
 
 def get_json_model_data(request, *args, **kwargs):
     selected_car = kwargs.get('car_title')
-    obj_models = list(Car.objects.values_list('car_model', flat=True).filter(car_title__icontains=selected_car).values())
+    obj_models = list(Car.objects.values('car_model').filter(car_title__icontains=selected_car).values().distinct())
     return JsonResponse({'data': obj_models})
